@@ -11,7 +11,7 @@ This is the first Milestone of the project Bookstore from the React and Redux mo
 
 ## :red_circle: Live Demo:
 
-[Live demo]()
+[Live demo](https://magic-books-2021.herokuapp.com/)
 
 ## :construction_worker: Getting Started
 
