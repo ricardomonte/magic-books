@@ -1,6 +1,6 @@
 # magic-books
 
-This is the second Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to create the react components, connect them with redux and create the action, reducer, and the store in redux.
+This is the third Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to connect CREATE_BOOK and REMOVE_BOOK actions with the components BooksForm and BooksList, respectively.
 
 ## :hammer: Built with:
 
