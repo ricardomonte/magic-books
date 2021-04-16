@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { createBook } from "../actions";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actionCreate from '../actions';
 
 function BooksForm({ action }) {
   const [book, setBook] = useState({
-    title: "",
-    category: "",
+    title: '',
+    category: '',
   });
 
   const handleChange = (event) => {
@@ -16,16 +17,20 @@ function BooksForm({ action }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(action);
+    action.createBook(book);
+    const removeState = { ...book };
+    removeState.title = '';
+    removeState.category = '';
+    setBook(removeState);
   };
   const categories = [
-    "Action",
-    "Biography",
-    "History",
-    "Horror",
-    "Kids",
-    "Learning",
-    "Sci-Fi",
+    'Action',
+    'Biography',
+    'History',
+    'Horror',
+    'Kids',
+    'Learning',
+    'Sci-Fi',
   ];
 
   return (
@@ -63,13 +68,13 @@ function BooksForm({ action }) {
 }
 
 BooksForm.propTypes = {
-  action: PropTypes.func.isRequired,
+  action: PropTypes.instanceOf(Object).isRequired,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    action: (book) => dispatch(createBook(book)),
+    action: bindActionCreators(actionCreate, dispatch),
   };
 }
 
-export default connect(mapDispatchToProps)(BooksForm);
+export default connect(null, mapDispatchToProps)(BooksForm);
