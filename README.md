@@ -1,6 +1,6 @@
 # magic-books
 
-This is the first Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to set up the project using create-react-app, install the necessary packages, set up the linters and deploy to Heroku.
+This is the second Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to create the react components, connect them with redux and create the action, reducer, and the store in redux.
 
 ## :hammer: Built with:
 
@@ -8,6 +8,7 @@ This is the first Milestone of the project Bookstore from the React and Redux mo
 - Css
 - JavaScript
 - React
+- Redux
 
 ## :red_circle: Live Demo:
 
