@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actionCreate from '../actions';
+import { createBook } from '../actions';
 
 function BooksForm({ action }) {
   const [book, setBook] = useState({
@@ -17,7 +16,7 @@ function BooksForm({ action }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    action.createBook(book);
+    action(book);
     const removeState = { ...book };
     removeState.title = '';
     removeState.category = '';
@@ -54,6 +53,9 @@ function BooksForm({ action }) {
             value={book.category}
             onChange={handleChange}
           >
+            <option value="" disabled>
+              Categories...
+            </option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category}
@@ -73,7 +75,7 @@ BooksForm.propTypes = {
 
 function mapDispatchToProps(dispatch) {
   return {
-    action: bindActionCreators(actionCreate, dispatch),
+    action: (book) => dispatch(createBook(book)),
   };
 }
 
