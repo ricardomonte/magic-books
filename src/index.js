@@ -2,28 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
+import faker from 'faker';
 import App from './components/App';
 import configureStore from './configureStore';
 
 const State = {
   book: [
     {
-      id: Math.floor(Math.random() * 10).toString(10),
+      id: faker.finance.routingNumber(),
       title: 'La inevitable levedad del ser',
       category: 'Philosophy',
     },
     {
-      id: Math.floor(Math.random() * 10).toString(10),
+      id: faker.finance.routingNumber(),
       title: 'IT',
       category: 'Horror',
     },
     {
-      id: Math.floor(Math.random() * 10).toString(10),
+      id: faker.finance.routingNumber(),
       title: 'React for Dummies',
       category: 'Learning',
     },
     {
-      id: Math.floor(Math.random() * 10).toString(10),
+      id: faker.finance.routingNumber(),
       title: 'Redux for Dummies',
       category: 'Learning',
     },
