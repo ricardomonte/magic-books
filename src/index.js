@@ -2,29 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
-import faker from 'faker';
+import { v4 as uuidv4 } from 'uuid';
 import App from './components/App';
 import configureStore from './configureStore';
 
 const State = {
   book: [
     {
-      id: faker.finance.routingNumber(),
+      id: uuidv4(),
       title: 'La inevitable levedad del ser',
       category: 'Philosophy',
     },
     {
-      id: faker.finance.routingNumber(),
+      id: uuidv4(),
       title: 'IT',
       category: 'Horror',
     },
     {
-      id: faker.finance.routingNumber(),
+      id: uuidv4(),
       title: 'React for Dummies',
       category: 'Learning',
     },
     {
-      id: faker.finance.routingNumber(),
+      id: uuidv4(),
       title: 'Redux for Dummies',
       category: 'Learning',
     },
