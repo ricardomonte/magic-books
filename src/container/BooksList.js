@@ -26,14 +26,7 @@ function BooksList({
         onFilterChange={handleFilterChange}
       />
       <table className="table">
-        <thead>
-          <tr>
-            <th>Book Id</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
+        <tbody className="body-book">
           {filteredBooks.map((book) => (
             <Book
               key={book.title}

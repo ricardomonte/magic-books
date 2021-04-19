@@ -33,38 +33,37 @@ function BooksForm({ action }) {
   ];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <div>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            onChange={handleChange}
-            value={book.title}
-          />
-        </div>
+    <form onSubmit={handleSubmit} className="form-book">
+      <div className="search-book">
+        <input
+          type="text"
+          id="title"
+          name="title"
+          onChange={handleChange}
+          value={book.title}
+          placeholder="Book Title"
+        />
       </div>
-      <div>
-        <div>
-          <select
-            id="category"
-            name="category"
-            value={book.category}
-            onChange={handleChange}
-          >
-            <option value="" disabled>
-              Categories...
+      <div className="select-book">
+        <select
+          id="category"
+          name="category"
+          value={book.category}
+          onChange={handleChange}
+        >
+          <option value="" disabled>
+            Categories...
+          </option>
+          {categories.map((category) => (
+            <option key={category} value={category}>
+              {category}
             </option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
+          ))}
+        </select>
       </div>
-      <button type="submit">Save Book</button>
+      <button className="button-save__book" type="submit">
+        Save Book
+      </button>
     </form>
   );
 }
