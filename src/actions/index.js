@@ -13,3 +13,10 @@ export function removeBook(book) {
     payload: book,
   };
 }
+
+export function changeFilter(filter) {
+  return {
+    type: types.CHANGE_FILTER,
+    payload: filter,
+  };
+}

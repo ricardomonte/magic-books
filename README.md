@@ -1,6 +1,6 @@
 # magic-books
 
-This is the third Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to connect CREATE_BOOK and REMOVE_BOOK actions with the components BooksForm and BooksList, respectively.
+This is the fourth Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to create a new presentational component CategoryFilter and create a Redux action CHANGE_FILTER and a reducer. This new component displays a select box where the user can filter the books that are displayed.
 
 ## :hammer: Built with:
 

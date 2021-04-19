@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { v4 as uuidv4 } from 'uuid';
 import * as types from '../actions/actionTypes';
 
 function bookReducer(state = [], action) {
@@ -7,7 +7,7 @@ function bookReducer(state = [], action) {
       return [
         ...state,
         {
-          id: faker.finance.routingNumber(),
+          id: uuidv4(),
           title: action.payload.title,
           category: action.payload.category,
         },
