@@ -29,6 +29,11 @@
       grid-area: links;
       display: flex;
       gap: 20px;
+      text-transform: uppercase;
+
+      :last-child {
+        color: #d8d8d8;
+      }
     }
 
     .user-logo {
