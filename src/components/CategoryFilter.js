@@ -14,12 +14,14 @@ function CategoryFilter({ filter, onFilterChange }) {
   ];
 
   return (
-    <div>
+    <div className="container-filter">
+      <p className="filter-text">Filter:</p>
       <select
         id="category"
         name="category"
         value={filter}
         onChange={onFilterChange}
+        className="select-category"
       >
         <option value="" disabled>
           Categories...

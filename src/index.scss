@@ -1,3 +1,10 @@
+@import './styles/Nav.scss';
+@import './styles/App.scss';
+@import './styles/Bookform.scss';
+@import './styles/Books.scss';
+@import './styles/Chapter.scss';
+@import './styles/Categoryfilter.scss';
+
 body {
   margin: 0;
   font-family:
@@ -14,6 +21,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 code {

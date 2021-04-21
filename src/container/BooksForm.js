@@ -33,20 +33,20 @@ function BooksForm({ action }) {
   ];
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <div>
+    <>
+      <h2 className="add-book">add new Book</h2>
+      <form onSubmit={handleSubmit} className="form-book">
+        <div className="search-book">
           <input
             type="text"
             id="title"
             name="title"
             onChange={handleChange}
             value={book.title}
+            placeholder="Book Title"
           />
         </div>
-      </div>
-      <div>
-        <div>
+        <div className="select-book">
           <select
             id="category"
             name="category"
@@ -63,9 +63,11 @@ function BooksForm({ action }) {
             ))}
           </select>
         </div>
-      </div>
-      <button type="submit">Save Book</button>
-    </form>
+        <button className="button-save__book" type="submit">
+          Save Book
+        </button>
+      </form>
+    </>
   );
 }
 

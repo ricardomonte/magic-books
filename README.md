@@ -1,6 +1,8 @@
 # magic-books
 
-This is the fourth Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to create a new presentational component CategoryFilter and create a Redux action CHANGE_FILTER and a reducer. This new component displays a select box where the user can filter the books that are displayed.
+This is the fifth Milestone of the project Bookstore from the React and Redux module from Microvers. This Milestone goal is to give the style to the SPA following a given example.
+
+![website screenshots](https://media.giphy.com/media/D43Kyugh8NMsYQ9vpv/giphy.gif)
 
 ## :hammer: Built with:
 

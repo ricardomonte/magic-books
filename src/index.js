@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import { Provider } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import App from './components/App';
 import configureStore from './configureStore';
+import NavBar from './common/NavBar';
 
 const State = {
   book: [
@@ -36,6 +37,7 @@ const store = configureStore(State);
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
+      <NavBar />
       <App />
     </React.StrictMode>
   </Provider>,
