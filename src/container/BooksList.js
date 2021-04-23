@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
-import { changeFilter, removeBook } from '../actions';
+import { changeFilter, deleteBook, loadBooks } from '../actions';
 
 function BooksList({
-  books, filterCategory, deleteBook, filterBooks,
+  books,
+  filterCategory,
+  deleteBook,
+  filterBooks,
+  loadedBooks,
 }) {
+  useEffect(() => {
+    loadedBooks().catch((error) => {
+      alert(`loading courses failed ${error}`);
+    });
+  }, []);
+
   const handleRemoveBook = (event) => {
-    deleteBook({ id: event.target.value });
+    deleteBook({ id: parseInt(event.target.value, 10) });
   };
 
   const handleFilterChange = (event) => {
@@ -49,8 +59,9 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    deleteBook: (book) => dispatch(removeBook(book)),
+    deleteBook: (book) => dispatch(deleteBook(book)),
     filterBooks: (filter) => dispatch(changeFilter(filter)),
+    loadedBooks: () => dispatch(loadBooks()),
   };
 }
 
@@ -59,6 +70,7 @@ BooksList.propTypes = {
   filterCategory: PropTypes.instanceOf(Object).isRequired,
   deleteBook: PropTypes.func.isRequired,
   filterBooks: PropTypes.func.isRequired,
+  loadedBooks: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
