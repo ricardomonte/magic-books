@@ -1,18 +1,18 @@
-import { v4 as uuidv4 } from 'uuid';
 import * as types from '../actions/actionTypes';
 
 function bookReducer(state = [], action) {
   switch (action.type) {
-    case types.CREATE_BOOK:
+    case types.LOAD_BOOK_SUCCESS:
+      return action.payload;
+    case types.CREATE_BOOK_SUCCESS:
       return [
         ...state,
         {
-          id: uuidv4(),
           title: action.payload.title,
           category: action.payload.category,
         },
       ];
-    case types.REMOVE_BOOK:
+    case types.DELETE_BOOK_SUCCESS:
       return [...state].filter((element) => element.id !== action.payload.id);
     default:
       return state;
