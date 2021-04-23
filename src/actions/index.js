@@ -1,13 +1,6 @@
 import * as types from './actionTypes';
 import * as bookApi from '../api/ApiBooks';
 
-export function removeBook(book) {
-  return {
-    type: types.REMOVE_BOOK,
-    payload: book,
-  };
-}
-
 export function changeFilter(filter) {
   return {
     type: types.CHANGE_FILTER,
