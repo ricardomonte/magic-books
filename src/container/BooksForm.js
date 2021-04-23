@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createBook } from '../actions';
+import { saveBook, loadBooks } from '../actions';
 
-function BooksForm({ action }) {
+function BooksForm({ action, loadedBooks }) {
   const [book, setBook] = useState({
     title: '',
     category: '',
@@ -17,6 +17,7 @@ function BooksForm({ action }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     action(book);
+    loadedBooks();
     const removeState = { ...book };
     removeState.title = '';
     removeState.category = '';
@@ -72,12 +73,14 @@ function BooksForm({ action }) {
 }
 
 BooksForm.propTypes = {
-  action: PropTypes.instanceOf(Object).isRequired,
+  action: PropTypes.func.isRequired,
+  loadedBooks: PropTypes.func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    action: (book) => dispatch(createBook(book)),
+    action: (book) => dispatch(saveBook(book)),
+    loadedBooks: () => dispatch(loadBooks()),
   };
 }
 
